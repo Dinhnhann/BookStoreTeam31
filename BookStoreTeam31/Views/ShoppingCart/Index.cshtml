@@ -1,0 +1,86 @@
+﻿@model IEnumerable<BookStoreTeam31.Models.CHITIETHOADON>
+@{
+    ViewBag.Title = "Index";
+    var Subtotal = 0;
+}
+
+<div class="cart_inner">
+    <div class="table-responsive">
+        @using (Html.BeginForm("Edit", "ShoppingCart"))
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Sách</th>
+                        <th scope="col">Giá Sách</th>
+                        <th scope="col">Số Lượng</th>
+                        <th scope="col">Tổng Tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        @*<Subtotal += item.SACH.GIASACH * item.SOLUONG></Subtotal>*@
+
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Action("Picture", "SACHes", new { item.SACH.MASACH })" alt="" width="148px" height="154px">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            <a href="@Url.Action("Details", "SACHes", new { item.SACH.MASACH })">@item.SACH.TENSACH</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>@item.SACH.GIASACH vnđ</h5>
+                            </td>
+                            <td>
+                                <div class="product_count">
+                                    @Html.Hidden("Mã Sách", item.SACH.MASACH)
+                                    @*<span name="Decrement" class="input-number-decrement"> <i class="ti-minus"></i></span>*@
+                                    <input name="SOLUONG" class="input-number" type="text" value="@item.SOLUONG" min="0" max="10">
+                                    @*<span name="Increment" class="input-number-increment"> <i class="ti-plus"></i></span>*@
+                                </div>
+                            </td>
+                            <td>
+                                <h5>@(item.SACH.GIASACH * item.SOLUONG) vnđ</h5>
+                            </td>
+                        </tr>
+
+                    <tr class="bottom_button">
+                        <td>
+                            <a class="btn_1" href="@Url.Action("Index2", "SACHes")">Tiếp Tục Mua</a>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="cupon_text float-right">
+                                <a class="btn_1" href="@Url.Action("Delete", "ShoppingCart")">Xóa Giỏ Hàng</a>
+                                @*<input type="submit" class="btn_1 btn btn-primary" value="Chỉnh Sửa Giỏ Hàng" />*@
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <h5>Tổng Tiền</h5>
+                        </td>
+                        <td>
+                            <h5> @(item.SACH.GIASACH * item.SOLUONG) vnđ</h5>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        <div class="checkout_btn_inner float-right">
+            @*<a class="btn_1" href="#">Tiếp Tục Mua </a>*@
+            <a class="btn_1 checkout_btn_1" href="@Url.Action("Create", "Bill")">Thanh Toán</a>
+        </div>
+    </div>
+</div>

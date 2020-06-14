@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BookStoreTeam31.Models.SACH>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Sách Đã Tạo</h2>
+
+<p>
+    <a href="@Url.Action("Create")">Tạo Sách Mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Sách
+        </th>
+        <th>
+            Giá Sách
+        </th>
+        <th>
+            Thông Tin Sách
+        </th>
+        <th>
+            Hình Ảnh
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details", new { item.MASACH })" target="_blank">@item.TENSACH</a>
+            </td>
+            <td>
+                @item.GIASACH
+            </td>
+            <td>
+                @if (item.THONGTIN != null && item.THONGTIN.Length > 100)
+                {
+                    @item.THONGTIN.Substring(0, 100)
+                }
+                else
+                {
+                    @item.THONGTIN
+                }
+            </td>
+            <td>
+                <img src="@Url.Action("Picture", new { item.MASACH })" width="80px" height="100px" />
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { item.MASACH })">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="@Url.Action("Delete", new { item.MASACH })">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

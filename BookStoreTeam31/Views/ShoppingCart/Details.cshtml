@@ -1,0 +1,50 @@
+﻿@model BookStoreTeam31.Models.CHITIETHOADON
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi Tiết</h2>
+
+<div>
+    <h4>Chi Tiết Hóa Đơn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GIASACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIASACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOADON.KHACHHANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOADON.KHACHHANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SACH.TENSACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SACH.TENSACH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MASACH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

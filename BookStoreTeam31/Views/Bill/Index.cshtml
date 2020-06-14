@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BookStoreTeam31.Models.HOADON>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KHACHHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @foreach (var details in item.CHITIETHOADONs)
+                {
+                    @details.SACH.TENSACH <span>x</span> @details.SOLUONG <br />
+                }
+            </td>
+        </tr>
+    }
+
+</table>

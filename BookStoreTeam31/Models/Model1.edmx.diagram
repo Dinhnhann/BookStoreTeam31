@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a79035bc832541c5a0a449dbd0a0503e" Name="Diagram1">
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.CHITIETHOADON" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.HOADON" Width="1.5" PointX="0.75" PointY="10" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.SACH" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="CsK24_BookStoreModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <AssociationConnector Association="CsK24_BookStoreModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CsK24_BookStoreModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CsK24_BookStoreModel.FK_CHITIETHOADON_MAHOADON" />
+        <AssociationConnector Association="CsK24_BookStoreModel.FK_CHITIETHOADON_MASACH" />
+        <AssociationConnector Association="CsK24_BookStoreModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
