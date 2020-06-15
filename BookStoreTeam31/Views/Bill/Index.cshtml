@@ -25,23 +25,23 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NGAY)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KHACHHANG)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDT)
-            </td>
-            <td>
-                @foreach (var details in item.CHITIETHOADONs)
-                {
-                    @details.SACH.TENSACH <span>x</span> @details.SOLUONG <br />
-                }
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.NGAY)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KHACHHANG)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SDT)
+    </td>
+    <td>
+        @foreach (var details in item.CHITIETHOADONs)
+        {
+            @details.SACH.TENSACH <span>x</span> @details.SOLUONG <br />
+        }
+    </td>
+</tr>
     }
 
 </table>

@@ -11,7 +11,7 @@ using BookStoreTeam31.Models;
 
 namespace BookStoreTeam31.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize/*(Roles = "Admin")*/]
     public class SACHesController : Controller
     {
         private CsK24_BookStoreEntities db = new CsK24_BookStoreEntities();

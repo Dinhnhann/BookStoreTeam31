@@ -26,7 +26,7 @@ namespace BookStoreTeam31.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize/*(Roles = "Admin")*/]
         public ActionResult Index()
         {
             var model = db.HOADONs.ToList();
